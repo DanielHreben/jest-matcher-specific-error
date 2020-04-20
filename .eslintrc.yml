@@ -1,0 +1,42 @@
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: 'module'
+  project: './tsconfig.json'
+
+plugins:
+  - simple-import-sort
+  - filenames
+
+extends:
+  - 'eslint:recommended'
+  - 'plugin:node/recommended'
+  - 'plugin:jest/recommended'
+  - 'plugin:@typescript-eslint/eslint-recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'plugin:prettier/recommended'
+  - 'prettier/@typescript-eslint'
+
+rules:
+  '@typescript-eslint/no-namespace': 0
+  'node/no-unsupported-features/es-syntax': 0
+  'node/no-unpublished-import': 0
+  'node/no-missing-import': [
+    2,
+    { tryExtensions: ['.js', '.json', '.ts', '.d.ts'] }
+  ]
+  '@typescript-eslint/explicit-function-return-type': 0
+  '@typescript-eslint/no-explicit-any': 0
+  '@typescript-eslint/no-non-null-assertion': 0
+  '@typescript-eslint/no-use-before-define': 0
+  '@typescript-eslint/no-unused-vars': [
+    2,
+    { ignoreRestSiblings: true }
+  ]
+  '@typescript-eslint/no-floating-promises': 2
+  '@typescript-eslint/no-require-imports': 2
+  'no-empty-pattern': 0
+  'no-console': 2
+  'simple-import-sort/sort': 2
+  'filenames/match-regex': [2, '^[0-9a-z-.]+$']

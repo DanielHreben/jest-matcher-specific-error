@@ -1,0 +1,46 @@
+{
+  "name": "jest-matcher-specific-error",
+  "version": "0.0.4",
+  "description": "Make sure your function really throws what you expect",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "repository": "git@github.com:DanielHreben/jest-matcher-specific-error.git",
+  "author": "Daniel Hreben <daniel.hreben@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "types",
+    "dist"
+  ],
+  "tags": [
+    "jest",
+    "expect",
+    "matcher",
+    "error",
+    "plugin",
+    "throws",
+    "reject"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist; tsc",
+    "lint:check": "eslint . --ext .ts",
+    "lint": "yarn lint:check --fix"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "jest": "^25.4.0",
+    "prettier": "^2.0.4",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3",
+    "@types/node": "^13.13.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "target": "es2018",
+    "module": "commonjs",
+    "allowJs": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "include": [
+    "./src",
+    "./types"
+  ]
+}
