@@ -1,6 +1,6 @@
 {
   "name": "jest-matcher-specific-error",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Make sure your function really throws what you expect",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -22,6 +22,7 @@
     "reject"
   ],
   "scripts": {
+    "prepare": "yarn build",
     "build": "rm -rf ./dist; tsc",
     "lint:check": "eslint . --ext .ts",
     "lint": "yarn lint:check --fix",
