@@ -11,35 +11,56 @@ function errorToObject(error: Error) {
   };
 }
 
+type ErrorFactory = Error | (() => void);
+function unwrapErrorFactory(value: ErrorFactory): Error | undefined {
+  if (typeof value === 'function') {
+    try {
+      value();
+    } catch(error) {
+      return error;
+    }
+  } else {
+    return value;
+  }
+}
+
 export function toMatchError(
   this: MatcherContext,
-  gotError: Error,
+  gotErrorFactory: Error | (() => void),
   expectedError: Error
 ): CustomMatcherResult {
-  const got = errorToObject(gotError);
+  const gotError = unwrapErrorFactory(gotErrorFactory);
   const expected = errorToObject(expectedError);
 
   const diff: string[] = [];
-
-  if (got.class !== expected.class) {
+  if (gotError === undefined) {
     diff.push(
-      "Error class is not the same:",
-      this.utils.diff(got.class, expected.class) as string
+        "Expected to receive an error, but no error was thrown"
     );
-  }
+  } else {
 
-  if (got.message !== expected.message) {
-    diff.push(
-      "Error message is not the same:",
-      this.utils.diff(got.message, expected.message) as string
-    );
-  }
+    const got = errorToObject(gotError);
 
-  if (!this.equals(got.publicFields, expected.publicFields)) {
-    diff.push(
-      "Error public fields is not the same:",
-      this.utils.diff(got.publicFields, expected.publicFields) as string
-    );
+    if (got.class !== expected.class) {
+      diff.push(
+          "Error class is not the same:",
+          this.utils.diff(got.class, expected.class) as string
+      );
+    }
+
+    if (got.message !== expected.message) {
+      diff.push(
+          "Error message is not the same:",
+          this.utils.diff(got.message, expected.message) as string
+      );
+    }
+
+    if (!this.equals(got.publicFields, expected.publicFields)) {
+      diff.push(
+          "Error public fields is not the same:",
+          this.utils.diff(got.publicFields, expected.publicFields) as string
+      );
+    }
   }
 
   return {
