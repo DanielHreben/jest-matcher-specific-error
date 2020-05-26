@@ -1,6 +1,6 @@
 {
   "name": "jest-matcher-specific-error",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Make sure your function really throws what you expect",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
