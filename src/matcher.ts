@@ -13,10 +13,10 @@ function errorToObject(error: Error) {
 
 type ErrorFactory = Error | (() => void);
 function unwrapErrorFactory(value: ErrorFactory): Error | undefined {
-  if (typeof value === 'function') {
+  if (typeof value === "function") {
     try {
       value();
-    } catch(error) {
+    } catch (error) {
       return error;
     }
   } else {
@@ -34,31 +34,28 @@ export function toMatchError(
 
   const diff: string[] = [];
   if (gotError === undefined) {
-    diff.push(
-        "Expected to receive an error, but no error was thrown"
-    );
+    diff.push("Expected to receive an error, but no error was thrown");
   } else {
-
     const got = errorToObject(gotError);
 
     if (got.class !== expected.class) {
       diff.push(
-          "Error class is not the same:",
-          this.utils.diff(got.class, expected.class) as string
+        "Error class is not the same:",
+        this.utils.diff(got.class, expected.class) as string
       );
     }
 
     if (got.message !== expected.message) {
       diff.push(
-          "Error message is not the same:",
-          this.utils.diff(got.message, expected.message) as string
+        "Error message is not the same:",
+        this.utils.diff(got.message, expected.message) as string
       );
     }
 
     if (!this.equals(got.publicFields, expected.publicFields)) {
       diff.push(
-          "Error public fields is not the same:",
-          this.utils.diff(got.publicFields, expected.publicFields) as string
+        "Error public fields is not the same:",
+        this.utils.diff(got.publicFields, expected.publicFields) as string
       );
     }
   }

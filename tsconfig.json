@@ -12,13 +12,7 @@
     "noUnusedLocals": true,
     "resolveJsonModule": true,
     "outDir": "./dist",
-    "types": [
-      "node",
-      "jest"
-    ]
+    "types": ["node", "jest"]
   },
-  "include": [
-    "./src",
-    "./types"
-  ]
+  "include": ["./src", "./types", "./test"]
 }

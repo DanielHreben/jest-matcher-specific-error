@@ -45,7 +45,7 @@ describe("matcher", () => {
     it("should throw error if different properties", () => {
       expect(() => {
         expect(throwError(new SpecificError("test"))).toMatchError(
-            new SpecificError("test", false)
+          new SpecificError("test", false)
         );
       }).toThrowErrorMatchingSnapshot();
     });
