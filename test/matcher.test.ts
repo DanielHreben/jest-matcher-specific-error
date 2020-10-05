@@ -31,7 +31,14 @@ describe("matcher", () => {
         expect(throwError(new SpecificError2("test"))).toMatchError(
           new SpecificError("test")
         );
-      }).toThrowErrorMatchingSnapshot();
+      }).toThrowErrorMatchingInlineSnapshot(`
+        "Error class is not the same:
+        - Expected
+        + Received
+
+        - [Function SpecificError2]
+        + [Function SpecificError]"
+      `);
     });
 
     it("should throw error if different messages", () => {
@@ -39,7 +46,14 @@ describe("matcher", () => {
         expect(throwError(new SpecificError("test"))).toMatchError(
           new SpecificError("test2")
         );
-      }).toThrowErrorMatchingSnapshot();
+      }).toThrowErrorMatchingInlineSnapshot(`
+        "Error message is not the same:
+        - Expected
+        + Received
+
+        - test
+        + test2"
+      `);
     });
 
     it("should throw error if different properties", () => {
@@ -47,13 +61,24 @@ describe("matcher", () => {
         expect(throwError(new SpecificError("test"))).toMatchError(
           new SpecificError("test", false)
         );
-      }).toThrowErrorMatchingSnapshot();
+      }).toThrowErrorMatchingInlineSnapshot(`
+        "Error public fields is not the same:
+        - Expected
+        + Received
+
+          Object {
+        -   "other": Object {},
+        +   "other": false,
+          }"
+      `);
     });
 
     it("should fail if no error is thrown", () => {
       expect(() => {
         expect(() => true).toMatchError(new SpecificError("test"));
-      }).toThrowErrorMatchingSnapshot();
+      }).toThrowErrorMatchingInlineSnapshot(
+        `"Expected to receive an error, but no error was thrown"`
+      );
     });
   });
 
@@ -69,7 +94,14 @@ describe("matcher", () => {
         await expect(
           Promise.reject(new SpecificError("test"))
         ).rejects.toMatchError(new SpecificError2("test"));
-      }).rejects.toThrowErrorMatchingSnapshot();
+      }).rejects.toThrowErrorMatchingInlineSnapshot(`
+              "Error class is not the same:
+              - Expected
+              + Received
+
+              - [Function SpecificError]
+              + [Function SpecificError2]"
+            `);
     });
   });
 });

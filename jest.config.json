@@ -1,0 +1,6 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "collectCoverage": true,
+  "snapshotSerializers": [ "./test/strip-color-serializer.ts" ]
+}
