@@ -1,8 +1,8 @@
 {
   "name": "jest-matcher-specific-error",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Make sure your function really throws what you expect",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "types": "types/index.d.ts",
   "repository": "git@github.com:DanielHreben/jest-matcher-specific-error.git",
   "author": "Daniel Hreben <daniel.hreben@gmail.com>",
@@ -10,7 +10,7 @@
   "private": false,
   "files": [
     "types",
-    "dist"
+    "dist/src"
   ],
   "tags": [
     "jest",
