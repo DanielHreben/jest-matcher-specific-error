@@ -36,8 +36,8 @@ describe("matcher", () => {
         - Expected
         + Received
 
-        - [Function SpecificError2]
-        + [Function SpecificError]"
+        - [Function SpecificError]
+        + [Function SpecificError2]"
       `);
     });
 
@@ -51,8 +51,8 @@ describe("matcher", () => {
         - Expected
         + Received
 
-        - test
-        + test2"
+        - test2
+        + test"
       `);
     });
 
@@ -67,8 +67,8 @@ describe("matcher", () => {
         + Received
 
           Object {
-        -   "other": Object {},
-        +   "other": false,
+        -   "other": false,
+        +   "other": Object {},
           }"
       `);
     });
@@ -99,8 +99,8 @@ describe("matcher", () => {
               - Expected
               + Received
 
-              - [Function SpecificError]
-              + [Function SpecificError2]"
+              - [Function SpecificError2]
+              + [Function SpecificError]"
             `);
     });
   });

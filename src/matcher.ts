@@ -41,21 +41,21 @@ export function toMatchError(
     if (got.class !== expected.class) {
       diff.push(
         "Error class is not the same:",
-        this.utils.diff(got.class, expected.class) as string
+        this.utils.diff(expected.class, got.class) as string
       );
     }
 
     if (got.message !== expected.message) {
       diff.push(
         "Error message is not the same:",
-        this.utils.diff(got.message, expected.message) as string
+        this.utils.diff(expected.message, got.message) as string
       );
     }
 
-    if (!this.equals(got.publicFields, expected.publicFields)) {
+    if (!this.equals(expected.publicFields, got.publicFields)) {
       diff.push(
         "Error public fields is not the same:",
-        this.utils.diff(got.publicFields, expected.publicFields) as string
+        this.utils.diff(expected.publicFields, got.publicFields) as string
       );
     }
   }
