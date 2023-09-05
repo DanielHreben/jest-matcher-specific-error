@@ -11,7 +11,11 @@ With yarn:
 > yarn add -D jest-matcher-specific-error
 
 # Setup
-Same as [Other jest matchers](https://github.com/jest-community/jest-extended#setup)
+Same as [Other Jest matchers](https://jest-extended.jestcommunity.dev/docs/getting-started/setup).
+
+# Typescript
+
+Same as [Other Jest matchers](https://jest-extended.jestcommunity.dev/docs/getting-started/typescript).
 
 # Usage
 ```typescript
