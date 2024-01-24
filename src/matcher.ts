@@ -54,7 +54,7 @@ export function toMatchError(
 
     if (!this.equals(expected.publicFields, got.publicFields)) {
       diff.push(
-        "Error public fields is not the same:",
+        "Error public fields are not the same:",
         this.utils.diff(expected.publicFields, got.publicFields) as string
       );
     }
