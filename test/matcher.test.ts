@@ -62,7 +62,7 @@ describe("matcher", () => {
           new SpecificError("test", false)
         );
       }).toThrowErrorMatchingInlineSnapshot(`
-        "Error public fields is not the same:
+        "Error public fields are not the same:
         - Expected
         + Received
 
