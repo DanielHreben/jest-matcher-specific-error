@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 20
       - run: yarn --frozen-lockfile
+      - run: yarn lint:lockfile
       - run: yarn lint:check
       - run: yarn build
       - run: yarn test
