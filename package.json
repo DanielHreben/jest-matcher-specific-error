@@ -31,7 +31,7 @@
     "lint:lockfile": "lockfile-lint --path yarn.lock",
     "lint": "yarn lint:check --fix",
     "test": "jest",
-    "test:vitest": "vitest run test/vitest.test.mjs"
+    "test:vitest": "vitest run test/vitest.test.ts"
   },
   "lockfile-lint": {
     "allowed-hosts": [
