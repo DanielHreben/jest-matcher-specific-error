@@ -2,5 +2,6 @@
   "preset": "ts-jest",
   "testEnvironment": "node",
   "collectCoverage": true,
+  "testPathIgnorePatterns": [ "/node_modules/", "/test/vitest\\.test\\.mjs$" ],
   "snapshotSerializers": [ "./test/strip-color-serializer.ts" ]
 }

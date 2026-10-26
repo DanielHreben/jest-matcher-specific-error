@@ -17,7 +17,7 @@ function unwrapErrorFactory(value: ErrorFactory): Error | undefined {
     try {
       value();
     } catch (error) {
-      return error;
+      return error as Error;
     }
   } else {
     return value;
@@ -27,7 +27,7 @@ function unwrapErrorFactory(value: ErrorFactory): Error | undefined {
 export function toMatchError(
   this: MatcherContext,
   gotErrorFactory: Error | (() => void),
-  expectedError: Error
+  expectedError: Error,
 ): CustomMatcherResult {
   const gotError = unwrapErrorFactory(gotErrorFactory);
   const expected = errorToObject(expectedError);
@@ -41,21 +41,21 @@ export function toMatchError(
     if (got.class !== expected.class) {
       diff.push(
         "Error class is not the same:",
-        this.utils.diff(expected.class, got.class) as string
+        this.utils.diff(expected.class, got.class) as string,
       );
     }
 
     if (got.message !== expected.message) {
       diff.push(
         "Error message is not the same:",
-        this.utils.diff(expected.message, got.message) as string
+        this.utils.diff(expected.message, got.message) as string,
       );
     }
 
     if (!this.equals(expected.publicFields, got.publicFields)) {
       diff.push(
         "Error public fields are not the same:",
-        this.utils.diff(expected.publicFields, got.publicFields) as string
+        this.utils.diff(expected.publicFields, got.publicFields) as string,
       );
     }
   }
