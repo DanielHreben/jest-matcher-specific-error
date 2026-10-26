@@ -32,7 +32,6 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-          registry-url: https://registry.npmjs.org/
       - run: yarn --frozen-lockfile
       - run: yarn build
       - run: npm publish
@@ -45,9 +44,6 @@ jobs:
 #       - uses: actions/setup-node@v7
 #         with:
 #           node-version: 24
-#           registry-url: https://npm.pkg.github.com/
 #       - run: yarn --frozen-lockfile
 #       - run: yarn build
 #       - run: npm publish
-#         env:
-#           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
