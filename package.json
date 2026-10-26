@@ -1,10 +1,13 @@
 {
   "name": "jest-matcher-specific-error",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Make sure your function really throws what you expect",
   "main": "dist/src/index.js",
   "types": "types/index.d.ts",
-  "repository": "git@github.com:DanielHreben/jest-matcher-specific-error.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielHreben/jest-matcher-specific-error.git"
+  },
   "author": "Daniel Hreben <daniel.hreben@gmail.com>",
   "license": "MIT",
   "private": false,
