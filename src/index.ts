@@ -13,6 +13,6 @@ if (globalExpect !== undefined) {
     [
       "Unable to find Jest's or Vitest's global expect.",
       "Please check you have added jest-matcher-specific-error to setupFilesAfterEnv (Jest) or setupFiles (Vitest).",
-    ].join("\n")
+    ].join("\n"),
   );
 }
