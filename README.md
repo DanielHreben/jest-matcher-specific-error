@@ -25,7 +25,7 @@ export default defineConfig({
 
 Jest: same as [Other Jest matchers](https://jest-extended.jestcommunity.dev/docs/getting-started/typescript).
 
-Vitest: add `"jest-matcher-specific-error/types/vitest"` to `compilerOptions.types` in `tsconfig.json`, or add `import "jest-matcher-specific-error/types/vitest";` to a `.d.ts` file.
+Vitest (5+): add `"jest-matcher-specific-error/types/vitest"` to `compilerOptions.types` in `tsconfig.json`, or add `import "jest-matcher-specific-error/types/vitest";` to a `.d.ts` file.
 
 # Usage
 ```typescript
