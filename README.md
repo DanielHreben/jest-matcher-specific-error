@@ -11,11 +11,21 @@ With yarn:
 > yarn add -D jest-matcher-specific-error
 
 # Setup
-Same as [Other Jest matchers](https://jest-extended.jestcommunity.dev/docs/getting-started/setup).
+Jest: same as [Other Jest matchers](https://jest-extended.jestcommunity.dev/docs/getting-started/setup).
+
+Vitest: add it to `setupFiles` (works with or without `globals: true`):
+```typescript
+// vitest.config.ts
+export default defineConfig({
+  test: { setupFiles: ["jest-matcher-specific-error"] },
+});
+```
 
 # Typescript
 
-Same as [Other Jest matchers](https://jest-extended.jestcommunity.dev/docs/getting-started/typescript).
+Jest: same as [Other Jest matchers](https://jest-extended.jestcommunity.dev/docs/getting-started/typescript).
+
+Vitest: add `"jest-matcher-specific-error/types/vitest"` to `compilerOptions.types` in `tsconfig.json`, or add `import "jest-matcher-specific-error/types/vitest";` to a `.d.ts` file.
 
 # Usage
 ```typescript
@@ -28,7 +38,7 @@ expect(yourError).toMatchError(expectedError);
 Errors threated as equal if ALL conditions satisfied:
  * Errors are instances of same class (strict `===` comparison by reference)
  * Error messages are equal
- * All error public fields are deeply equal (default `jest` helper comparison)
+ * All error public fields are deeply equal (default `jest`/`vitest` helper comparison)
 
 Error stack traces are ignored.
 

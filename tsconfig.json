@@ -14,5 +14,6 @@
     "outDir": "./dist",
     "types": ["node", "jest"]
   },
-  "include": ["./src", "./types", "./test"]
+  "include": ["./src", "./types", "./test"],
+  "exclude": ["./types/vitest.d.ts"]
 }

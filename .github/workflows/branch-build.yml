@@ -19,3 +19,4 @@ jobs:
       - run: yarn lint:check
       - run: yarn build
       - run: yarn test
+      - run: yarn test:vitest
